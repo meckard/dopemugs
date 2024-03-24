@@ -12,7 +12,8 @@
   },
   "eslintConfig": {
     "extends": "@redwoodjs/eslint-config",
-    "root": true
+    "root": true,
+    "eslint-plugin-jsx-a11y": "^6.8.0"
   },
   "engines": {
     "node": "=20.x"
