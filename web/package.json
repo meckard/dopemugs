@@ -10,6 +10,9 @@
       "defaults"
     ]
   },
+  "scripts": {
+    "format": "prettier --write "
+  },
   "dependencies": {
     "@redwoodjs/forms": "7.1.3",
     "@redwoodjs/router": "7.1.3",
