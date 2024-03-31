@@ -1,6 +1,13 @@
 :root {
   --main-blue: rgb(0, 255, 247);
   --dark-orange: rgb(137, 91, 0);
+  --light-orange: #e79a00;
+}
+
+.permanent-marker-regular {
+  font-family: 'Permanent Marker', cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 
 html {
@@ -15,8 +22,34 @@ nav {
   background-color: var(--main-blue);
   color: var(--main-orange);
   margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-nav p  {
+nav p {
   margin: 0;
+}
+
+.logo {
+  height: 75px;
+  width: auto;
+  margin: 20px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav li {
+  list-style: none;
+  font-family: 'Permanent Marker';
+  margin: 20px;
+  font-size: 1.25rem;
+}
+
+nav a {
+  color: var(--dark-orange);
+  text-decoration: none;
 }
