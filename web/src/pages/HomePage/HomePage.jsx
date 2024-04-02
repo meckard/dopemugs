@@ -5,8 +5,10 @@ const HomePage = () => {
   return (
     <>
       <Metadata title="Home" description="Home page" />
-
-      <h1>Dope Mugs</h1>
+      <div className='banner'>
+        <h1>Dope Mugs</h1>
+        <div className='circle'></div>
+      </div>
       <p>
         Find me in <code>./web/src/pages/HomePage/HomePage.jsx</code>
       </p>
