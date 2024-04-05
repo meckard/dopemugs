@@ -2,7 +2,7 @@
   --main-blue: rgb(0, 255, 213);
   --dark-orange: rgb(137, 91, 0);
   --light-orange: #e79a00;
-  --very-light-orange:#ecc16c;
+  --very-light-orange: #ecc16c;
 }
 
 .permanent-marker-regular {
@@ -29,6 +29,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 5px 5px 5px var(--dark-orange);
 }
 
 nav p {
@@ -64,21 +65,29 @@ nav a {
   align-items: center;
   height: 300px;
   width: 100%;
-  margin: 30px;
+  margin: 50px 0;
 }
 
 .banner h1 {
   position: absolute;
   z-index: 5;
   font-size: 5rem;
-  text-shadow: 5px 5px 5px var(--light-orange);
+  text-shadow: 5px 5px 5px var(--dark-orange);
+  rotate: -10deg;
+  color: var(--light-orange)
+}
+
+.mug {
+  z-index: 3;
+  position: absolute;
+  font-size: 12rem;
 }
 
 .circle {
-  background-color: var(--main-blue);
-  height: 300px;
-  width: 300px;
+  color: var(--main-blue);
+  height: 450px;
+  width: 450px;
   z-index: 0;
-  border-radius: 50%;
-  box-shadow: 5px 5px 5px var(--dark-orange);
+  font-size: 20rem;
+  text-shadow: 5px 5px 5px var(--dark-orange);
 }

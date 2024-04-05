@@ -1,5 +1,7 @@
 import { Link, routes } from '@redwoodjs/router'
 import { Metadata } from '@redwoodjs/web'
+import { ImMug } from "react-icons/im";
+import { TiStarburst } from "react-icons/ti";
 
 const HomePage = () => {
   return (
@@ -7,7 +9,8 @@ const HomePage = () => {
       <Metadata title="Home" description="Home page" />
       <div className='banner'>
         <h1>Dope Mugs</h1>
-        <div className='circle'></div>
+        <TiStarburst className='circle' />
+        <ImMug className='mug' />
       </div>
       <p>
         Find me in <code>./web/src/pages/HomePage/HomePage.jsx</code>
