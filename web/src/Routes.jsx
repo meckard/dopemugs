@@ -15,6 +15,7 @@ import DopemugLayout from './layouts/DopemugsLayout/DopemugsLayout'
 const Routes = () => {
   return (
     <Router>
+      <Route path="/mugs" page={MugsPage} name="mugs" />
       <Set wrap={DopemugLayout}>
         <Route path="/" page={HomePage} name="home" />
         <Set wrap={ScaffoldLayout} title="DopeMugs" titleTo="dopeMugs" buttonLabel="New DopeMug" buttonTo="newDopeMug">
