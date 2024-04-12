@@ -7,6 +7,7 @@ const HomePage = () => {
   return (
     <>
       <Metadata title="Home" description="Home page" />
+      <div className='stripe'></div>
       <section>
         <div className="banner">
           <h1>Dope Mugs</h1>
