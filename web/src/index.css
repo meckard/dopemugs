@@ -34,7 +34,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 5px 5px 5px var(--dark-orange);
+  border-bottom: 2px solid var(--dark-orange);
   font-family: 'The Brown Wall';
 }
 
@@ -65,18 +65,15 @@ nav a {
   text-decoration: none;
 }
 
-.stripe {
-  background-color: var(--main-blue);
-  width: 100%;
-  height: 150px;
-  position: absolute;
-}
-
 section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 1000px;
+  background-color: var(--main-blue);
+  margin: 10px;
+  border-radius: 25px;
 }
 
 section h2 {
@@ -85,48 +82,32 @@ section h2 {
 
 .banner {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+  flex-direction: column;
   align-items: center;
-  height: auto;
+  height: 80%;
   width: 100%;
   animation: explosion 1s linear 0s 1;
+  background-color: var(--main-blue);
 }
 
 .banner h1 {
   position: absolute;
   z-index: 5;
-  font-size: 5rem;
-  text-shadow: 5px 5px 5px var(--dark-orange);
+  font-size: 4.5rem;
   rotate: -10deg;
-  color: var(--light-orange);
+  color: var(--very-light-orange);
+  margin-right: 150px;
+  margin-bottom: 130px;
+  text-shadow: 2px 2px 2px var();
 }
 
 .mug {
   z-index: 3;
-  position: absolute;
   height: 100%;
-  width: 20%;
+  width: 70%;
 }
 
-.circle {
-  color: var(--main-blue);
-  height: 100%;
-  width: 50%;
-  z-index: 0;
-  font-size: 20rem;
-  text-shadow: 5px 5px 5px var(--dark-orange);
-  animation: starburst-rotate 8s infinite 0s linear;
-}
-
-@keyframes starburst-rotate {
-  from {
-    transform: rotate(0);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
 
 @keyframes explosion {
   from {
