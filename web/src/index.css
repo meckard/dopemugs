@@ -6,8 +6,8 @@
 }
 
 @font-face {
-  font-family: 'The Brown Wall';
-  src: url(C:\Users\lumbe\Documents\Projects\dopemugs\web\public\Fonts\thebrownwall\TheBrownWall-Anwx.ttf);
+  font-family: 'Super Magic';
+  src: url(C:\Users\lumbe\Documents\Projects\dopemugs\web\public\Fonts\SuperMagic-L3XVn.ttf);
 }
 
 .permanent-marker-regular {
@@ -18,7 +18,7 @@
 
 html {
   margin: 0;
-  font-family: 'The Brown Wall';
+  font-family: 'Super Magic';
   color: var(--dark-orange);
 }
 
@@ -32,20 +32,14 @@ nav {
   color: var(--main-orange);
   margin: 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  border-bottom: 2px solid var(--dark-orange);
-  font-family: 'The Brown Wall';
-}
-
-nav p {
-  margin: 0;
+  font-family: 'Super Magic';
+  height: 100px;
 }
 
 .logo {
-  height: 75px;
-  width: auto;
-  margin: 20px;
+  font-size: 4rem;
 }
 
 nav ul {
@@ -71,7 +65,6 @@ section {
   justify-content: center;
   align-items: center;
   height: 1000px;
-  background-color: var(--main-blue);
   margin: 10px;
   border-radius: 25px;
 }
@@ -88,26 +81,35 @@ section h2 {
   height: 80%;
   width: 100%;
   animation: explosion 1s linear 0s 1;
-  background-color: var(--main-blue);
+
 }
 
 .banner h1 {
   position: absolute;
   z-index: 5;
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   rotate: -10deg;
-  color: var(--very-light-orange);
-  margin-right: 150px;
-  margin-bottom: 130px;
+  color: var(--light-orange);
+  margin-right: 92px;
+  margin-bottom: 250px;
   text-shadow: 2px 2px 2px var();
 }
 
 .mug {
   z-index: 3;
-  height: 100%;
-  width: 70%;
+  height: 50%;
+  width: 50%;
+  margin-bottom: 50px;
 }
 
+.starburst {
+  color: var(--main-blue);
+  height:120%;
+  width: 90%;
+  position: absolute;
+  margin-bottom: 225px;
+  animation: starburst-rotate 8s infinite 0s linear;
+}
 
 @keyframes explosion {
   from {
@@ -116,5 +118,15 @@ section h2 {
 
   to {
     transform: scale(1);
+  }
+}
+
+@keyframes starburst-rotate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
   }
 }

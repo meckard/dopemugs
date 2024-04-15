@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <header>
         <nav>
-          <img className='logo' src={logo} alt='logo'/>
+          <p className='logo'>DM</p>
           <ul>
             <Link to={routes.home()}>
               <li>Home</li>
