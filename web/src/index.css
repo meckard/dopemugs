@@ -65,8 +65,10 @@ section {
   justify-content: center;
   align-items: center;
   height: 1000px;
+  width: 100vw;
   margin: 10px;
   border-radius: 25px;
+  max-width: 100%;
 }
 
 section h2 {
@@ -78,10 +80,12 @@ section h2 {
   justify-content: space-evenly;
   flex-direction: column;
   align-items: center;
-  height: 80%;
+  height: 100%;
   width: 100%;
   animation: explosion 1s linear 0s 1;
-
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 .banner h1 {
@@ -97,18 +101,18 @@ section h2 {
 
 .mug {
   z-index: 3;
-  height: 50%;
-  width: 50%;
-  margin-bottom: 50px;
+  height: 40%;
+  width: 40%;
 }
 
 .starburst {
   color: var(--main-blue);
-  height:120%;
+  height: 90%;
   width: 90%;
   position: absolute;
   margin-bottom: 225px;
   animation: starburst-rotate 8s infinite 0s linear;
+  overflow: hidden;
 }
 
 @keyframes explosion {
