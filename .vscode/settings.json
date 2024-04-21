@@ -8,5 +8,6 @@
   "[prisma]": {
     "editor.formatOnSave": true
   },
-  "prettier.configPath": ""
+  "prettier.configPath": "",
+    "html.customData": ["./node_modules/@shoelace-style/shoelace/dist/vscode.html-custom-data.json"]
 }
