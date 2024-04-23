@@ -35,7 +35,7 @@ const Header = () => {
             </Link>
           </SlAnimation>
           <SlAnimation id='mugs' name='bounce' iterations='1' className='hover'>
-            <Link to="">
+            <Link to={routes.mugs()}>
               <li>Show Me the Mugs!</li>
             </Link>
           </SlAnimation>
