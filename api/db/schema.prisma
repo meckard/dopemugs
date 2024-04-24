@@ -22,4 +22,5 @@ model DopeMug {
   imageURL String  @unique
   name  String?
   madeBy String
+  submittedBy String
 }

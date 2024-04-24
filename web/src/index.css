@@ -134,3 +134,9 @@ section h2 {
     transform: rotate(360deg);
   }
 }
+
+.mugs-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
