@@ -12,7 +12,7 @@ const MugsPage = () => {
     },
   })
 
-  const myImage = cld.image('sample')
+  const myImage = cld.image('samples/animals/kitten-playing')
   console.log(myImage)
 
   return (
@@ -22,13 +22,11 @@ const MugsPage = () => {
         <h1>The Mugs</h1>
         <SlCard className="mug-card">
           <div slot="header">Dope Mug Name</div>
-          <AdvancedImage slot="image" cldimg={myImage}></AdvancedImage>
-          <div slot="footer">
+          <AdvancedImage slot="image" cldImg={myImage}></AdvancedImage>
             <ul>
-              <li>Submitted by: Me</li>
-              <li>Made by: Target</li>
+              <li>Submitted By: ME</li>
+              <li>Made By: Target</li>
             </ul>
-          </div>
         </SlCard>
       </div>
     </>
