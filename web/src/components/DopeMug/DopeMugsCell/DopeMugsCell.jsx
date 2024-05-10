@@ -9,6 +9,7 @@ export const QUERY = gql`
       imageURL
       name
       madeBy
+      submittedBy
     }
   }
 `

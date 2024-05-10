@@ -27,21 +27,26 @@ describe('dopeMugs', () => {
 
   scenario('creates a dopeMug', async () => {
     const result = await createDopeMug({
-      input: { imageURL: 'String3064702', madeBy: 'String' },
+      input: {
+        imageURL: 'String2152662',
+        madeBy: 'String',
+        submittedBy: 'String',
+      },
     })
 
-    expect(result.imageURL).toEqual('String3064702')
+    expect(result.imageURL).toEqual('String2152662')
     expect(result.madeBy).toEqual('String')
+    expect(result.submittedBy).toEqual('String')
   })
 
   scenario('updates a dopeMug', async (scenario) => {
     const original = await dopeMug({ id: scenario.dopeMug.one.id })
     const result = await updateDopeMug({
       id: original.id,
-      input: { imageURL: 'String18875652' },
+      input: { imageURL: 'String31874332' },
     })
 
-    expect(result.imageURL).toEqual('String18875652')
+    expect(result.imageURL).toEqual('String31874332')
   })
 
   scenario('deletes a dopeMug', async (scenario) => {

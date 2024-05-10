@@ -12,6 +12,7 @@ export const QUERY = gql`
       imageURL
       name
       madeBy
+      submittedBy
     }
   }
 `
@@ -23,6 +24,7 @@ const UPDATE_DOPE_MUG_MUTATION = gql`
       imageURL
       name
       madeBy
+      submittedBy
     }
   }
 `

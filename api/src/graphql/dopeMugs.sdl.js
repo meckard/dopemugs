@@ -4,6 +4,7 @@ export const schema = gql`
     imageURL: String!
     name: String
     madeBy: String!
+    submittedBy: String!
   }
 
   type Query {
@@ -15,12 +16,14 @@ export const schema = gql`
     imageURL: String!
     name: String
     madeBy: String!
+    submittedBy: String!
   }
 
   input UpdateDopeMugInput {
     imageURL: String
     name: String
     madeBy: String
+    submittedBy: String
   }
 
   type Mutation {

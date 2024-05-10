@@ -75,6 +75,24 @@ const DopeMugForm = (props) => {
 
         <FieldError name="madeBy" className="rw-field-error" />
 
+        <Label
+          name="submittedBy"
+          className="rw-label"
+          errorClassName="rw-label rw-label-error"
+        >
+          Submitted by
+        </Label>
+
+        <TextField
+          name="submittedBy"
+          defaultValue={props.dopeMug?.submittedBy}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ required: true }}
+        />
+
+        <FieldError name="submittedBy" className="rw-field-error" />
+
         <div className="rw-button-group">
           <Submit disabled={props.loading} className="rw-button rw-button-blue">
             Save

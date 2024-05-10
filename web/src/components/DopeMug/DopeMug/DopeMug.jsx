@@ -56,6 +56,10 @@ const DopeMug = ({ dopeMug }) => {
               <th>Made by</th>
               <td>{dopeMug.madeBy}</td>
             </tr>
+            <tr>
+              <th>Submitted by</th>
+              <td>{dopeMug.submittedBy}</td>
+            </tr>
           </tbody>
         </table>
       </div>

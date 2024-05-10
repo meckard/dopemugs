@@ -1,6 +1,18 @@
 export const standard = defineScenario({
   dopeMug: {
-    one: { data: { imageURL: 'String6808780', madeBy: 'String' } },
-    two: { data: { imageURL: 'String2130593', madeBy: 'String' } },
+    one: {
+      data: {
+        imageURL: 'String9180855',
+        madeBy: 'String',
+        submittedBy: 'String',
+      },
+    },
+    two: {
+      data: {
+        imageURL: 'String1676356',
+        madeBy: 'String',
+        submittedBy: 'String',
+      },
+    },
   },
 })

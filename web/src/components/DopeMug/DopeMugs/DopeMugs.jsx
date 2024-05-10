@@ -44,6 +44,7 @@ const DopeMugsList = ({ dopeMugs }) => {
             <th>Image url</th>
             <th>Name</th>
             <th>Made by</th>
+            <th>Submitted by</th>
             <th>&nbsp;</th>
           </tr>
         </thead>
@@ -54,6 +55,7 @@ const DopeMugsList = ({ dopeMugs }) => {
               <td>{truncate(dopeMug.imageURL)}</td>
               <td>{truncate(dopeMug.name)}</td>
               <td>{truncate(dopeMug.madeBy)}</td>
+              <td>{truncate(dopeMug.submittedBy)}</td>
               <td>
                 <nav className="rw-table-actions">
                   <Link
