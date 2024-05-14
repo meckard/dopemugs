@@ -1,6 +1,7 @@
 import { Link, routes } from '@redwoodjs/router'
 
 import DopeMugs from 'src/components/DopeMug/DopeMugs'
+import { MugCard } from 'src/components/MugCard'
 
 export const QUERY = gql`
   query FindDopeMugs {
@@ -32,5 +33,9 @@ export const Failure = ({ error }) => (
 )
 
 export const Success = ({ dopeMugs }) => {
-  return <DopeMugs dopeMugs={dopeMugs} />
+  console.log(dopeMugs)
+   return dopeMugs.map(mug => {
+      return MugCard(mug.name, mug.imageURL, mug.submittedBy, mug.madeBy )
+    })
+
 }

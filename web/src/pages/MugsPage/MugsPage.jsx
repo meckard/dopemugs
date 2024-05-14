@@ -3,18 +3,7 @@ import { Metadata } from '@redwoodjs/web'
 import SlCard from '@shoelace-style/shoelace/dist/react/card/index'
 import DopeMugsCell from 'src/components/DopeMug/DopeMugsCell'
 
-import { AdvancedImage } from '@cloudinary/react'
-import { Cloudinary } from '@cloudinary/url-gen'
-
 const MugsPage = () => {
-  const cld = new Cloudinary({
-    cloud: {
-      cloudName: 'djfwwccan',
-    },
-  })
-
-  const myImage = cld.image('samples/animals/kitten-playing')
-  console.log(myImage)
 
   return (
     <>
@@ -24,7 +13,6 @@ const MugsPage = () => {
         <DopeMugsCell/>
         <SlCard className="mug-card">
           <div slot="header">Dope Mug Name</div>
-          <AdvancedImage slot="image" cldImg={myImage}></AdvancedImage>
             <ul>
               <li>Submitted By: ME</li>
               <li>Made By: Target</li>
