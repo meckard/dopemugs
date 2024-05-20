@@ -148,3 +148,14 @@ section h2 {
   --border-width: 3px;
   padding: 3px;
 }
+
+.mug-submit {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cloudinary-button {
+  font-family: "Super Magic";
+}

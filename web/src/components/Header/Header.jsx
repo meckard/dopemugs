@@ -40,7 +40,7 @@ const Header = () => {
             </Link>
           </SlAnimation>
           <SlAnimation id='submit' name='bounce' iterations='1' className='hover'>
-          <Link to="">
+          <Link to={routes.submit()}>
             <li>Submit a Mug</li>
           </Link>
           </SlAnimation>
