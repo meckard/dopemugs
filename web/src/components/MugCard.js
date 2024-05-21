@@ -2,8 +2,9 @@ import { AdvancedImage } from '@cloudinary/react'
 import SlCard from '@shoelace-style/shoelace/dist/react/card/index'
 import { Cloudinary } from '@cloudinary/url-gen'
 import { thumbnail } from '@cloudinary/url-gen/actions/resize'
+import SlCarouselItem from '@shoelace-style/shoelace/dist/react/carousel-item/index'
 
-export const MugCard = (name,imageId, submit, made) => {
+export const MugCard = (name, imageId, submit, made) => {
   const cld = new Cloudinary({
     cloud: {
       cloudName: 'djfwwccan',
@@ -14,15 +15,12 @@ export const MugCard = (name,imageId, submit, made) => {
 
   myImage.resize(thumbnail().height(300).width(300))
 
-
-return (
-<SlCard className="mug-card">
-  <div slot="header">{name}</div>
-  <AdvancedImage slot="image" cldImg={myImage}></AdvancedImage>
-  <ul>
-    <li>{submit}</li>
-    <li>{made}</li>
-  </ul>
-</SlCard>
-)
+  return (
+      <SlCarouselItem>
+        <div>{name}</div>
+        <AdvancedImage cldImg={myImage}></AdvancedImage>
+        <p>Submitted By: {submit}</p>
+        <p>Made By: {made}</p>
+      </SlCarouselItem>
+  )
 }

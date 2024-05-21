@@ -2,6 +2,7 @@ import { Link, routes } from '@redwoodjs/router'
 
 import DopeMugs from 'src/components/DopeMug/DopeMugs'
 import { MugCard } from 'src/components/MugCard'
+import SlCarousel from '@shoelace-style/shoelace/dist/react/carousel/index'
 
 export const QUERY = gql`
   query FindDopeMugs {
@@ -34,8 +35,11 @@ export const Failure = ({ error }) => (
 
 export const Success = ({ dopeMugs }) => {
   console.log(dopeMugs)
-   return dopeMugs.map(mug => {
+   return(
+    <SlCarousel navigation>
+    {dopeMugs.map(mug => {
       return MugCard(mug.name, mug.imageURL, mug.submittedBy, mug.madeBy )
-    })
+    })}
+    </SlCarousel>)
 
 }
