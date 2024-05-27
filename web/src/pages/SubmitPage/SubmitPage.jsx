@@ -39,6 +39,26 @@ const SubmitPage = () => {
             <li></li>
           </ol>
         </p>
+        <form className='submit-form'>
+          <label for="name">
+            Name:
+            <input type="text" name="submitted-name" id="name" required />
+          </label>
+          <label for="made-by">
+            Made By:
+            <input type="text" name="made-by" id="made-by" required />
+          </label>
+          <label for="mug-picture">
+            Mug Picture:
+            <input
+              type="file"
+              name="mug-picture"
+              id="mug=picture"
+              accept="image/png, image/jpeg"
+            />
+          </label>
+          <input type='submit' value='Send that mug!'/>
+        </form>
         <CloudinaryUploadWidget uwConfig={uwConfig} setPublicId={setPublicId} />
         <div style={{ width: '800px' }}>
           <AdvancedImage

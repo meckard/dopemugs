@@ -159,3 +159,21 @@ section h2 {
 .cloudinary-button {
   font-family: "Super Magic";
 }
+
+.submit-form {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid;
+  padding: 20px;
+}
+
+input {
+  margin: 20px;
+  border-radius: 20px;
+  background-color: var(--very-light-orange);
+}
+
+input::file-selector-button {
+  background-color: var(--main-blue);
+  border-radius: 10px;
+}
