@@ -4,12 +4,41 @@ import {
   FieldError,
   Label,
   TextField,
+  FileField,
   Submit,
 } from '@redwoodjs/forms'
 
 const DopeMugForm = (props) => {
-  const onSubmit = (data) => {
-    props.onSave(data, props?.dopeMug?.id)
+  const imageToCloudinary = async (image) => {
+    const url = 'https://api.cloudinary.com/v1_1/djfwwccan/image/upload'
+    const preset = 'ml_default'
+
+    const formData = new FormData()
+    formData.append('file', image)
+    formData.append('upload_preset', preset)
+
+    try {
+      const response = await fetch(url, {
+        method: 'POST',
+        body: formData,
+      })
+
+      if (!response.ok) {
+        throw new Error('upload failed')
+      }
+
+      const data = await response.json()
+      console.log('Image uploaded successfully', data)
+    } catch (error) {
+      console.error('Error uploading image:', error)
+    }
+  }
+
+  const onSubmit = async (data) => {
+    /* props.onSave(data, props?.dopeMug?.id) */
+
+    console.log(data.imageURL[0])
+    imageToCloudinary(data.imageURL[0])
   }
 
   return (
@@ -30,7 +59,7 @@ const DopeMugForm = (props) => {
           Image url
         </Label>
 
-        <TextField
+        <FileField
           name="imageURL"
           defaultValue={props.dopeMug?.imageURL}
           className="rw-input"

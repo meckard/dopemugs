@@ -5,6 +5,7 @@ import { useState } from 'react'
 import CloudinaryUploadWidget from '../../components/CloudinaryUploadWidget'
 import { Cloudinary } from '@cloudinary/url-gen'
 import { AdvancedImage, responsive, placeholder } from '@cloudinary/react'
+import NewDopeMug from 'src/components/DopeMug/NewDopeMug/NewDopeMug'
 
 const SubmitPage = () => {
   const [publicId, setPublicId] = useState('')
@@ -26,6 +27,10 @@ const SubmitPage = () => {
   })
 
   const myImage = cld.image(publicId)
+
+  const submit = () => {
+
+  }
 
   return (
     <>
@@ -57,16 +62,17 @@ const SubmitPage = () => {
               accept="image/png, image/jpeg"
             />
           </label>
-          <input type='submit' value='Send that mug!'/>
+          <input type='submit'  value='Send that mug!'/>
         </form>
-        <CloudinaryUploadWidget uwConfig={uwConfig} setPublicId={setPublicId} />
+        {/* <CloudinaryUploadWidget uwConfig={uwConfig} setPublicId={setPublicId} />
         <div style={{ width: '800px' }}>
           <AdvancedImage
             style={{ maxWidth: '100%' }}
             cldImg={myImage}
             plugins={[responsive(), placeholder()]}
           />
-        </div>
+        </div> */}
+        <NewDopeMug/>
       </div>
     </>
   )
