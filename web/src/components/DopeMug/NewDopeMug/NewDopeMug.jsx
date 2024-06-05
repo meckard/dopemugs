@@ -29,6 +29,7 @@ const NewDopeMug = () => {
 
   const onSave = (input) => {
     createDopeMug({ variables: { input } })
+    console.log({ variables: { input } })
   }
 
   return (

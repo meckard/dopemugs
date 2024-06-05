@@ -9,10 +9,12 @@ import {
 } from '@redwoodjs/forms'
 
 const DopeMugForm = (props) => {
+  //Parameters to upload to Cloudinary
   const imageToCloudinary = async (image) => {
     const url = 'https://api.cloudinary.com/v1_1/djfwwccan/image/upload'
     const preset = 'ml_default'
 
+    //Prepares data to send
     const formData = new FormData()
     formData.append('file', image)
     formData.append('upload_preset', preset)
@@ -35,10 +37,16 @@ const DopeMugForm = (props) => {
   }
 
   const onSubmit = async (data) => {
-    /* props.onSave(data, props?.dopeMug?.id) */
+    const modifiedData = {
+      imageURL: data.imageURL[0].name,
+      madeBy: data.madeBy,
+      name: data.name,
+      submittedBy: data.submittedBy
+    }
+    props.onSave(modifiedData, props?.dopeMug?.id)
 
-    console.log(data.imageURL[0])
-    imageToCloudinary(data.imageURL[0])
+    console.log(data)
+    //imageToCloudinary(data.imageURL[0])
   }
 
   return (
