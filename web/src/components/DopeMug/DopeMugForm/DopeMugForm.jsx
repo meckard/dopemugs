@@ -46,7 +46,7 @@ const DopeMugForm = (props) => {
     props.onSave(modifiedData, props?.dopeMug?.id)
 
     console.log(data)
-    //imageToCloudinary(data.imageURL[0])
+    imageToCloudinary(data.imageURL[0])
   }
 
   return (

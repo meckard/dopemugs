@@ -149,31 +149,45 @@ section h2 {
   padding: 3px;
 }
 
-.mug-submit {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.cloudinary-button {
-  font-family: "Super Magic";
-}
-
 .submit-form {
   display: flex;
   flex-direction: column;
   border: 3px solid;
+  border-radius: 10px;
   padding: 20px;
+  justify-content: center;
+  margin: 0 auto;
+  width: 50%;
+  font-size: 2vw;
+}
+
+.rw-button-group {
+  align-self: center;
+}
+
+.rw-button-group button {
+  font-family: "Super Magic";
+  background-color: var(--main-blue);
+  color: var(--dark-orange);
+  border-radius: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 input {
   margin: 20px;
-  border-radius: 20px;
+  border-radius: 5px;
   background-color: var(--very-light-orange);
 }
 
 input::file-selector-button {
   background-color: var(--main-blue);
   border-radius: 10px;
+  color: var(--dark-orange);
+  font-family: "Super Magic";
 }
+
