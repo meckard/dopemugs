@@ -5,6 +5,10 @@
   --very-light-orange: #ecc16c;
 }
 
+.redwood-app {
+  height: 100vh;
+}
+
 @font-face {
   font-family: 'Super Magic';
   src: url(C:\Users\lumbe\Documents\Projects\dopemugs\web\public\Fonts\SuperMagic-L3XVn.ttf);
@@ -27,6 +31,29 @@ body {
   background-color: var(--very-light-orange);
 }
 
+.color-block1 {
+  height: 100vh;
+  width: 25%;
+  background-color: var(--dark-orange);
+  position: absolute;
+  z-index: 7;
+}
+
+.color-block2 {
+  height: 100vh;
+  width: 50%;
+  background-color: var(--light-orange);
+  position: absolute;
+  z-index: 5;
+}
+
+.color-block3 {
+  height: 100vh;
+  width: 75%;
+  background-color: var(--main-blue);
+  position: absolute;
+}
+
 nav {
   background-color: var(--very-light-orange);
   color: var(--main-orange);
@@ -36,6 +63,7 @@ nav {
   align-items: center;
   font-family: 'Super Magic';
   height: 100px;
+  border-bottom: 2px solid var(--dark-orange);
 }
 
 .logo {
@@ -64,15 +92,16 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 1000px;
+  height: 100vh;
   width: 100vw;
-  margin: 10px;
   border-radius: 25px;
   max-width: 100%;
+  z-index: 40;
+  position: relative;
 }
 
 section h2 {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 .banner {
@@ -110,7 +139,7 @@ section h2 {
   height: 90%;
   width: 90%;
   position: absolute;
-  margin-bottom: 225px;
+  margin-bottom: 185px;
   animation: starburst-rotate 8s infinite 0s linear;
   overflow: hidden;
 }
@@ -149,6 +178,13 @@ section h2 {
   padding: 3px;
 }
 
+.submit-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
 .submit-form {
   display: flex;
   flex-direction: column;
@@ -157,8 +193,12 @@ section h2 {
   padding: 20px;
   justify-content: center;
   margin: 0 auto;
-  width: 50%;
+  width: 50vw;
   font-size: 2vw;
+  z-index: 30;
+  position: relative;
+  background-color: var(--very-light-orange);
+  box-shadow: 2px 1px 2px var(--dark-orange);
 }
 
 .rw-button-group {
@@ -166,7 +206,7 @@ section h2 {
 }
 
 .rw-button-group button {
-  font-family: "Super Magic";
+  font-family: 'Super Magic';
   background-color: var(--main-blue);
   color: var(--dark-orange);
   border-radius: 10px;
@@ -182,12 +222,17 @@ input {
   margin: 20px;
   border-radius: 5px;
   background-color: var(--very-light-orange);
+  border: 2px solid var(--dark-orange);
+}
+
+.image-input {
+  border: none;
 }
 
 input::file-selector-button {
   background-color: var(--main-blue);
   border-radius: 10px;
   color: var(--dark-orange);
-  font-family: "Super Magic";
+  font-family: 'Super Magic';
+  border: 2px solid var(--dark-orange);
 }
-

@@ -8,6 +8,8 @@ import {
   Submit,
 } from '@redwoodjs/forms'
 
+import DOMPurify from "dompurify"
+
 const DopeMugForm = (props) => {
   //Parameters to upload to Cloudinary
   const imageToCloudinary = async (image) => {
@@ -18,6 +20,7 @@ const DopeMugForm = (props) => {
     const formData = new FormData()
     formData.append('file', image)
     formData.append('upload_preset', preset)
+
 
     try {
       const response = await fetch(url, {
@@ -37,12 +40,14 @@ const DopeMugForm = (props) => {
   }
 
   const onSubmit = async (data) => {
-    const modifiedData = {
-      imageURL: data.imageURL[0].name,
-      madeBy: data.madeBy,
-      name: data.name,
-      submittedBy: data.submittedBy
+
+     const modifiedData = {
+      imageURL: DOMPurify.sanitize(data.imageURL[0].name),
+      madeBy: DOMPurify.sanitize(data.madeBy),
+      name: DOMPurify.sanitize(data.name),
+      submittedBy: DOMPurify.sanitize(data.submittedBy)
     }
+
     props.onSave(modifiedData, props?.dopeMug?.id)
 
     console.log(data)
@@ -64,13 +69,13 @@ const DopeMugForm = (props) => {
           className="rw-label"
           errorClassName="rw-label rw-label-error"
         >
-          Image url
+          Image
         </Label>
 
         <FileField
           name="imageURL"
           defaultValue={props.dopeMug?.imageURL}
-          className="rw-input"
+          className="rw-input image-input"
           errorClassName="rw-input rw-input-error"
           validation={{ required: true }}
         />
@@ -132,7 +137,7 @@ const DopeMugForm = (props) => {
 
         <div className="rw-button-group">
           <Submit disabled={props.loading} className="rw-button rw-button-blue">
-            Save
+            Send the Dope Mug!
           </Submit>
         </div>
       </Form>

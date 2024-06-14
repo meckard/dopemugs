@@ -28,12 +28,13 @@ const SubmitPage = () => {
 
   const myImage = cld.image(publicId)
 
-
   return (
     <>
-      <div className="submit-form">
       <Metadata title="Submit" description="Submit page" />
-        <NewDopeMug/>
+      <div className='submit-page'>
+        <div className="submit-form">
+          <NewDopeMug />
+        </div>
       </div>
     </>
   )
