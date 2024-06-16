@@ -102,6 +102,8 @@ section {
 
 section h2 {
   font-size: 2.5rem;
+  width: 50vw;
+  text-align: center;
 }
 
 .banner {
@@ -120,48 +122,17 @@ section h2 {
 .banner h1 {
   position: absolute;
   z-index: 5;
-  font-size: 3.5rem;
+  font-size: 4.25rem;
   rotate: -10deg;
   color: var(--light-orange);
-  margin-right: 92px;
-  margin-bottom: 250px;
+  margin: 0 0 175px 0;
   text-shadow: 2px 2px 2px var();
 }
 
 .mug {
   z-index: 3;
-  height: 40%;
+  height: 50%;
   width: 40%;
-}
-
-.starburst {
-  color: var(--main-blue);
-  height: 90%;
-  width: 90%;
-  position: absolute;
-  margin-bottom: 185px;
-  animation: starburst-rotate 8s infinite 0s linear;
-  overflow: hidden;
-}
-
-@keyframes explosion {
-  from {
-    transform: scale(0);
-  }
-
-  to {
-    transform: scale(1);
-  }
-}
-
-@keyframes starburst-rotate {
-  from {
-    transform: rotate(0);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 .mugs-page {

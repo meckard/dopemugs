@@ -9,7 +9,6 @@ const HomePage = () => {
       <Metadata title="Home" description="Home page" />
         <section>
           <div className="banner">
-            {/* <TiStarburst className="starburst" /> */}
             <ImMug className="mug" />
             <h1>Dope Mugs</h1>
             <h2>Showing you the very dopest mugs</h2>
