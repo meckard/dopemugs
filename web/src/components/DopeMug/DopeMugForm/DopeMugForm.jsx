@@ -8,9 +8,16 @@ import {
   Submit,
 } from '@redwoodjs/forms'
 
+import { useState } from 'react'
+
+
 import DOMPurify from "dompurify"
 
 const DopeMugForm = (props) => {
+  const [fileName, setFileName] = useState('');
+  const [madeBy, setMadeBy] = useState('');
+  const [submittedBy, setSubmittedBy] = useState('');
+
   //Parameters to upload to Cloudinary
   const imageToCloudinary = async (image) => {
     const url = 'https://api.cloudinary.com/v1_1/djfwwccan/image/upload'
@@ -20,6 +27,8 @@ const DopeMugForm = (props) => {
     const formData = new FormData()
     formData.append('file', image)
     formData.append('upload_preset', preset)
+
+    let cloudId = ''
 
 
     try {
@@ -33,7 +42,13 @@ const DopeMugForm = (props) => {
       }
 
       const data = await response.json()
-      console.log('Image uploaded successfully', data)
+      console.log('Image uploaded successfully', data.publ)
+      props.onSave({
+        imageURL: data.public_id,
+        name: fileName,
+        madeBy: madeBy,
+        submittedBy: submittedBy
+      }, props?.dopeMug?.id)
     } catch (error) {
       console.error('Error uploading image:', error)
     }
@@ -48,7 +63,9 @@ const DopeMugForm = (props) => {
       submittedBy: DOMPurify.sanitize(data.submittedBy)
     }
 
-    props.onSave(modifiedData, props?.dopeMug?.id)
+    setFileName(modifiedData.name)
+    setMadeBy(modifiedData.madeBy)
+    setSubmittedBy(modifiedData.submittedBy)
 
     console.log(data)
     imageToCloudinary(data.imageURL[0])

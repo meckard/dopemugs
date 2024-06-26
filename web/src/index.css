@@ -140,6 +140,8 @@ section h2 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  z-index: 20;
+  position: relative;
 }
 
 .mug-card {
@@ -147,6 +149,8 @@ section h2 {
   --border-color: var(--dark-orange);
   --border-width: 3px;
   padding: 3px;
+  width: 50vw;
+  height: 50vw;
 }
 
 .submit-page {

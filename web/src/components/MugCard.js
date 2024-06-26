@@ -13,12 +13,12 @@ export const MugCard = (name, imageId, submit, made) => {
 
   const myImage = cld.image(imageId)
 
-  myImage.resize(thumbnail().height(300).width(300))
+  myImage.resize(thumbnail().height(200).width(300))
 
   return (
       <SlCarouselItem>
-        <div>{name}</div>
         <AdvancedImage cldImg={myImage}></AdvancedImage>
+        <div>{name}</div>
         <p>Submitted By: {submit}</p>
         <p>Made By: {made}</p>
       </SlCarouselItem>
