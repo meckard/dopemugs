@@ -19,7 +19,7 @@ const NewDopeMug = () => {
     {
       onCompleted: () => {
         toast.success('DopeMug created')
-        navigate(routes.dopeMugs())
+        navigate(routes.mugs())
       },
       onError: (error) => {
         toast.error(error.message)
