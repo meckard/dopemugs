@@ -1,7 +1,7 @@
 import { AdvancedImage } from '@cloudinary/react'
 import SlCard from '@shoelace-style/shoelace/dist/react/card/index'
 import { Cloudinary } from '@cloudinary/url-gen'
-import { thumbnail } from '@cloudinary/url-gen/actions/resize'
+import { fit } from '@cloudinary/url-gen/actions/resize'
 import SlCarouselItem from '@shoelace-style/shoelace/dist/react/carousel-item/index'
 
 export const MugCard = (name, imageId, submit, made) => {
@@ -13,7 +13,7 @@ export const MugCard = (name, imageId, submit, made) => {
 
   const myImage = cld.image(imageId)
 
-  myImage.resize(thumbnail().height(200).width(300))
+  myImage.resize(fit().width(600).height(800))
 
   return (
       <SlCarouselItem>
