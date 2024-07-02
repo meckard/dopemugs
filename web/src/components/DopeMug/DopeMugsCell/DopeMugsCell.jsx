@@ -36,7 +36,7 @@ export const Failure = ({ error }) => (
 export const Success = ({ dopeMugs }) => {
   console.log(dopeMugs)
    return(
-    <SlCarousel navigation>
+    <SlCarousel id="mugSlides" navigation>
     {dopeMugs.map(mug => {
       return MugCard(mug.name, mug.imageURL, mug.submittedBy, mug.madeBy )
     })}

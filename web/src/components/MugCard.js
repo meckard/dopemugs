@@ -13,7 +13,7 @@ export const MugCard = (name, imageId, submit, made) => {
 
   const myImage = cld.image(imageId)
 
-  myImage.resize(fit().width(600).height(800))
+  myImage.resize(fit().width(800).height(1000))
 
   return (
       <SlCarouselItem>

@@ -153,6 +153,10 @@ section h2 {
   height: 50vw;
 }
 
+#mugSlides {
+  aspect-ratio: 16 / 10;
+}
+
 .submit-page {
   display: flex;
   align-items: center;
