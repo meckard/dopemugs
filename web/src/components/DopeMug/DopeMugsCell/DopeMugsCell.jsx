@@ -1,6 +1,4 @@
 import { Link, routes } from '@redwoodjs/router'
-
-import DopeMugs from 'src/components/DopeMug/DopeMugs'
 import { MugCard } from 'src/components/MugCard'
 import SlCarousel from '@shoelace-style/shoelace/dist/react/carousel/index'
 

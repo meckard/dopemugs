@@ -42,7 +42,8 @@ const DopeMugForm = (props) => {
       }
 
       const data = await response.json()
-      console.log('Image uploaded successfully', data.publ)
+      console.log('Image uploaded successfully', data)
+      console.log(fileName)
       props.onSave({
         imageURL: data.public_id,
         name: fileName,
