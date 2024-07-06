@@ -8,15 +8,25 @@ import {
   Submit,
 } from '@redwoodjs/forms'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
-
-import DOMPurify from "dompurify"
+import DOMPurify from 'dompurify'
+import { hairspray } from '@cloudinary/url-gen/qualifiers/artisticFilter'
 
 const DopeMugForm = (props) => {
-  const [fileName, setFileName] = useState('');
-  const [madeBy, setMadeBy] = useState('');
-  const [submittedBy, setSubmittedBy] = useState('');
+  const [fileName, setFileName] = useState(' ')
+  const [madeBy, setMadeBy] = useState(' ')
+  const [submittedBy, setSubmittedBy] = useState(' ')
+
+  const handleFileInput = (event) => {
+    setFileName(event.target.value)
+  }
+  const handleMadeInput = (event) => {
+    setMadeBy(event.target.value)
+  }
+  const handleSubInput = (event) => {
+    setSubmittedBy(event.target.value)
+  }
 
   //Parameters to upload to Cloudinary
   const imageToCloudinary = async (image) => {
@@ -28,8 +38,7 @@ const DopeMugForm = (props) => {
     formData.append('file', image)
     formData.append('upload_preset', preset)
 
-    let cloudId = ''
-
+    console.log(fileName)
 
     try {
       const response = await fetch(url, {
@@ -44,26 +53,31 @@ const DopeMugForm = (props) => {
       const data = await response.json()
       console.log('Image uploaded successfully', data)
       console.log(fileName)
-      props.onSave({
-        imageURL: data.public_id,
-        name: fileName,
-        madeBy: madeBy,
-        submittedBy: submittedBy
-      }, props?.dopeMug?.id)
+      props.onSave(
+        {
+          imageURL: data.public_id,
+          name: fileName,
+          madeBy: madeBy,
+          submittedBy: submittedBy,
+        },
+        props?.dopeMug?.id
+      )
     } catch (error) {
       console.error('Error uploading image:', error)
     }
   }
 
-  const onSubmit = async (data) => {
-
-     const modifiedData = {
-      imageURL: DOMPurify.sanitize(data.imageURL[0].name),
-      madeBy: DOMPurify.sanitize(data.madeBy),
-      name: DOMPurify.sanitize(data.name),
+  const modifiedData = (data) => {
+    {
+      imageURL: DOMPurify.sanitize(data.imageURL)
+      madeBy: DOMPurify.sanitize(data.madeBy)
+      name: DOMPurify.sanitize(data.name)
       submittedBy: DOMPurify.sanitize(data.submittedBy)
     }
+  }
+  console.log(modifiedData.madeBy)
 
+  const onSubmit = async (data) => {
     setFileName(modifiedData.name)
     setMadeBy(modifiedData.madeBy)
     setSubmittedBy(modifiedData.submittedBy)
@@ -93,7 +107,7 @@ const DopeMugForm = (props) => {
         <FileField
           name="imageURL"
           defaultValue={props.dopeMug?.imageURL}
-          className="rw-input image-input"
+          className="rw-input image-input imageURL"
           errorClassName="rw-input rw-input-error"
           validation={{ required: true }}
         />
@@ -111,8 +125,12 @@ const DopeMugForm = (props) => {
         <TextField
           name="name"
           defaultValue={props.dopeMug?.name}
+          id="mugName"
+          value={fileName}
           className="rw-input"
           errorClassName="rw-input rw-input-error"
+          validation={{ required: true }}
+          onChange={handleFileInput}
         />
 
         <FieldError name="name" className="rw-field-error" />
@@ -128,9 +146,11 @@ const DopeMugForm = (props) => {
         <TextField
           name="madeBy"
           defaultValue={props.dopeMug?.madeBy}
-          className="rw-input"
+          className="rw-input madeBy"
           errorClassName="rw-input rw-input-error"
           validation={{ required: true }}
+          onChange={handleMadeInput}
+          value={madeBy}
         />
 
         <FieldError name="madeBy" className="rw-field-error" />
@@ -146,9 +166,11 @@ const DopeMugForm = (props) => {
         <TextField
           name="submittedBy"
           defaultValue={props.dopeMug?.submittedBy}
-          className="rw-input"
+          className="rw-input submittedBy"
           errorClassName="rw-input rw-input-error"
           validation={{ required: true }}
+          value={submittedBy}
+          onChange={handleSubInput}
         />
 
         <FieldError name="submittedBy" className="rw-field-error" />
