@@ -3,6 +3,7 @@
   --dark-orange: rgb(137, 91, 0);
   --light-orange: #e79a00;
   --very-light-orange: #ecc16c;
+  --70s-green: #89a25b;
 }
 
 .redwood-app {
@@ -64,6 +65,10 @@ nav {
   font-family: 'Super Magic';
   height: 100px;
   border-bottom: 2px solid var(--dark-orange);
+}
+
+Toast {
+  background-color: var(--70s-green);
 }
 
 .logo {
@@ -155,6 +160,11 @@ section h2 {
 
 #mugSlides {
   aspect-ratio: 16 / 10;
+  object-fit: contain;
+}
+
+sl-carousel-item img {
+  object-fit: contain;
 }
 
 .submit-page {
@@ -214,4 +224,8 @@ input::file-selector-button {
   color: var(--dark-orange);
   font-family: 'Super Magic';
   border: 2px solid var(--dark-orange);
+}
+
+toast {
+  background-color: var(--70s-green);
 }

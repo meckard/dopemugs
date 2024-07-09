@@ -18,7 +18,7 @@ const NewDopeMug = () => {
     CREATE_DOPE_MUG_MUTATION,
     {
       onCompleted: () => {
-        toast.success('DopeMug created')
+        toast.success('DopeMug created!')
       },
       onError: (error) => {
         toast.error(error.message)

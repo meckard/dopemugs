@@ -52,7 +52,6 @@ const DopeMugForm = (props) => {
 
       const data = await response.json()
       console.log('Image uploaded successfully', data)
-      console.log(fileName)
       props.onSave(
         {
           imageURL: data.public_id,
@@ -62,6 +61,7 @@ const DopeMugForm = (props) => {
         },
         props?.dopeMug?.id
       )
+
     } catch (error) {
       console.error('Error uploading image:', error)
     }
@@ -126,7 +126,6 @@ const DopeMugForm = (props) => {
           name="name"
           defaultValue={props.dopeMug?.name}
           id="mugName"
-          value={fileName}
           className="rw-input"
           errorClassName="rw-input rw-input-error"
           validation={{ required: true }}
@@ -150,7 +149,6 @@ const DopeMugForm = (props) => {
           errorClassName="rw-input rw-input-error"
           validation={{ required: true }}
           onChange={handleMadeInput}
-          value={madeBy}
         />
 
         <FieldError name="madeBy" className="rw-field-error" />
@@ -169,7 +167,6 @@ const DopeMugForm = (props) => {
           className="rw-input submittedBy"
           errorClassName="rw-input rw-input-error"
           validation={{ required: true }}
-          value={submittedBy}
           onChange={handleSubInput}
         />
 
