@@ -149,6 +149,25 @@ section h2 {
   position: relative;
 }
 
+.mugs-page h1 {
+  font-size: 4em;
+  text-shadow:
+    0.5px 0.5px #f1f4d8,
+    1px 1px #f1f4d8,
+    2px 2px #f1f4d8,
+    2.5px 2.5px var(--very-light-orange),
+    3px 3px var(--very-light-orange),
+    3.5px 3.5px var(--very-light-orange),
+    4px 4px var(--very-light-orange),
+    4.5px 4.5px var(--very-light-orange),
+    5px 5px var(--very-light-orange),
+    5.5px 5.5px var(--very-light-orange),
+    6px 6px var(--very-light-orange),
+    6.5px 6.5px var(--very-light-orange),
+    7px 7px var(--very-light-orange),
+    7.5px 7.5px var(--very-light-orange);
+}
+
 .mug-card {
   text-align: center;
   --border-color: var(--dark-orange);
@@ -161,6 +180,8 @@ section h2 {
 #mugSlides {
   aspect-ratio: 16 / 10;
   object-fit: contain;
+  height: 65%;
+  width: 65%;
 }
 
 sl-carousel-item img {
