@@ -180,12 +180,25 @@ section h2 {
 #mugSlides {
   aspect-ratio: 16 / 10;
   object-fit: contain;
-  height: 65%;
-  width: 65%;
+  height: 55%;
+  width: 55%;
 }
 
 sl-carousel-item img {
   object-fit: contain;
+}
+
+.carousel__slides p {
+  margin: 0;
+}
+
+.carousel_item {
+  background-color: var(--very-light-orange);
+}
+
+.carousel_item p, .card_name {
+  margin: 7px 0;
+  font-size: 25px;
 }
 
 .submit-page {

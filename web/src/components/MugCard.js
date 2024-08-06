@@ -16,9 +16,9 @@ export const MugCard = (name, imageId, submit, made) => {
   myImage.resize(fit().width(800).height(1000))
 
   return (
-      <SlCarouselItem>
+      <SlCarouselItem className='carousel_item'>
         <AdvancedImage cldImg={myImage}></AdvancedImage>
-        <div>{name}</div>
+        <div className='card_name'>{name}</div>
         <p>Submitted By: {submit}</p>
         <p>Made By: {made}</p>
       </SlCarouselItem>
