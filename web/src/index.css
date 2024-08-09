@@ -194,9 +194,11 @@ sl-carousel-item img {
 
 .carousel_item {
   background-color: var(--very-light-orange);
+  padding: 40px 0;
 }
 
-.carousel_item p, .card_name {
+.carousel_item p,
+.card_name {
   margin: 7px 0;
   font-size: 25px;
 }
